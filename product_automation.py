@@ -38,3 +38,16 @@ pyautogui.click(x=366, y=474)  # Tela dividida
 
 # Inserir um e-mail para testes
 pyautogui.write("email.email@gmail.com")
+
+# Usar a tecla TAB para pular para o campo de senha
+pyautogui.press("TAB")
+
+# Inserir uma senha para testes
+pyautogui.write("senhasenhasenha")
+
+# Pausa breve antes de ir para o botão
+time.sleep(0.3)
+
+# Clicar no botão de Login
+pyautogui.press("TAB")
+pyautogui.press("enter")
