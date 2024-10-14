@@ -19,3 +19,15 @@ pyautogui.click(x=862, y=616)
 
 # Abrir uma nova aba no Chrome (estava com uma aberta para exemplo)
 pyautogui.click(x=368, y=22)
+
+
+# -----------------------------------------
+# Etapa 2: Acessar o sistema da empresa
+# -----------------------------------------
+
+# Digitar o endereço do sistema
+pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
+pyautogui.press("enter")
+
+# Pausa para permitir que o site carregue
+time.sleep(2)
