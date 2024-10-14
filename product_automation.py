@@ -95,3 +95,9 @@ for row in base_de_dados.index:
     cost = base_de_dados.loc[row, "custo"]
     pyautogui.write(str(cost))
     pyautogui.press("TAB")
+
+    # Preencher campo: OBSERVAÇÕES (se não for NaN)
+    obs = base_de_dados.loc[row, "obs"]
+    if not pd.isna(obs):
+        pyautogui.write(str(obs))
+    pyautogui.press("TAB")
