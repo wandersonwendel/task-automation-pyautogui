@@ -60,3 +60,38 @@ pyautogui.press("enter")
 
 # Ler o arquivo CSV com os dados dos produtos
 base_de_dados = pd.read_csv("data/products.csv")
+
+for row in base_de_dados.index:
+    # Pegar coordenada do primeiro campo de cadastro de produto
+    pyautogui.click(x=354, y=353)  # Tela dividida
+    # pyautogui.click(x=614, y=365)  # Tela maximizada
+
+    # Preencher campo: CÓDIGO
+    code = base_de_dados.loc[row, "codigo"]
+    pyautogui.write(str(code))
+    pyautogui.press("TAB") # Ir pulando para os demais campos
+
+    # Preencher campo: MARCA
+    brand = base_de_dados.loc[row, "marca"]
+    pyautogui.write(str(brand))
+    pyautogui.press("TAB")
+
+    # Preencher campo: TIPO
+    type = base_de_dados.loc[row, "tipo"]
+    pyautogui.write(str(type))
+    pyautogui.press("TAB")
+
+    # Preencher campo: CATEGORIA
+    category = base_de_dados.loc[row, "categoria"]
+    pyautogui.write(str(category))
+    pyautogui.press("TAB")
+
+    # Preencher campo: PREÇO UNITÁRIO
+    unit_price = base_de_dados.loc[row, "preco_unitario"]
+    pyautogui.write(str(unit_price))
+    pyautogui.press("TAB")
+
+    # Preencher campo: CUSTO
+    cost = base_de_dados.loc[row, "custo"]
+    pyautogui.write(str(cost))
+    pyautogui.press("TAB")
