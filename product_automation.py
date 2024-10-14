@@ -101,3 +101,9 @@ for row in base_de_dados.index:
     if not pd.isna(obs):
         pyautogui.write(str(obs))
     pyautogui.press("TAB")
+
+    # Apertar no botão de ENVIAR/CADASTRAR
+    pyautogui.press("enter")
+
+    # Rolar a tela (positivo = para cima, negativo para baixo)
+    pyautogui.scroll(5000)
