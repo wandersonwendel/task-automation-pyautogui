@@ -15,17 +15,10 @@ pyautogui.press("enter")
 # Pausa para permitir que o navegador abra
 time.sleep(1)
 
-# Clicar na conta do Google escolhida (coordenadas do mouse)
-pyautogui.click(x=862, y=616)
-
-# Abrir uma nova aba no Chrome (estava com uma aberta para exemplo)
-pyautogui.click(x=368, y=22)
-
 
 # -----------------------------------------
 # Etapa 2: Acessar o sistema da empresa
 # -----------------------------------------
-
 # Digitar o endereço do sistema
 pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pyautogui.press("enter")
@@ -34,8 +27,7 @@ pyautogui.press("enter")
 time.sleep(2)
 
 # Clicar no campo de entrada de E-Mail (coordenadas do mouse)
-# pyautogui.click(x=615, y=521)  # Tela maximizada
-pyautogui.click(x=366, y=474)  # Tela dividida
+pyautogui.click(x=615, y=521)
 
 # Inserir um e-mail para testes
 pyautogui.write("email.email@gmail.com")
@@ -49,7 +41,7 @@ pyautogui.write("senhasenhasenha")
 # Pausa breve antes de ir para o botão
 time.sleep(0.3)
 
-# Clicar no botão de Login
+# Pula para o botão e pressiona enter
 pyautogui.press("TAB")
 pyautogui.press("enter")
 
@@ -57,14 +49,12 @@ pyautogui.press("enter")
 # -----------------------------------------
 # Etapa 3: Ler a base de dados
 # -----------------------------------------
-
 # Ler o arquivo CSV com os dados dos produtos
 base_de_dados = pd.read_csv("data/products.csv")
 
 for row in base_de_dados.index:
-    # Pegar coordenada do primeiro campo de cadastro de produto
-    pyautogui.click(x=354, y=353)  # Tela dividida
-    # pyautogui.click(x=614, y=365)  # Tela maximizada
+    # Coordenada do primeiro campo de cadastro de produto
+    pyautogui.click(x=614, y=365)
 
     # Preencher campo: CÓDIGO
     code = base_de_dados.loc[row, "codigo"]
@@ -102,8 +92,7 @@ for row in base_de_dados.index:
         pyautogui.write(str(obs))
     pyautogui.press("TAB")
 
-    # Apertar no botão de ENVIAR/CADASTRAR
     pyautogui.press("enter")
 
-    # Rolar a tela (positivo = para cima, negativo para baixo)
+    # Rolar a tela para cima, repetindo o loop de cadastrar novo produto
     pyautogui.scroll(5000)
