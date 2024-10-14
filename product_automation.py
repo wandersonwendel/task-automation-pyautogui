@@ -31,3 +31,10 @@ pyautogui.press("enter")
 
 # Pausa para permitir que o site carregue
 time.sleep(2)
+
+# Clicar no campo de entrada de E-Mail (coordenadas do mouse)
+# pyautogui.click(x=615, y=521)  # Tela maximizada
+pyautogui.click(x=366, y=474)  # Tela dividida
+
+# Inserir um e-mail para testes
+pyautogui.write("email.email@gmail.com")
