@@ -13,3 +13,6 @@ pyautogui.press("enter")
 
 # Pausa para permitir que o navegador abra
 time.sleep(1)
+
+# Clicar na conta do Google escolhida (coordenadas do mouse)
+pyautogui.click(x=862, y=616)
