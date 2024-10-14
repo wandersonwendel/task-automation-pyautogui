@@ -1,5 +1,6 @@
 import pyautogui
 import time
+import pandas as pd
 
 # Configuração de pausa para cada operação
 pyautogui.PAUSE = 1
@@ -51,3 +52,11 @@ time.sleep(0.3)
 # Clicar no botão de Login
 pyautogui.press("TAB")
 pyautogui.press("enter")
+
+
+# -----------------------------------------
+# Etapa 3: Ler a base de dados
+# -----------------------------------------
+
+# Ler o arquivo CSV com os dados dos produtos
+base_de_dados = pd.read_csv("data/products.csv")
